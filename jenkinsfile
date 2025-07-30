@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Repo') {
+            steps {
+                git 'https://github.com/Faizan-faizan1/jenkins-test-.git'
+            }
+        }
+
+        stage('Run Script') {
+            steps {
+                sh './hello.sh'
+            }
+        }
+    }
+}
+
